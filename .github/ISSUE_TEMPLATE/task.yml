@@ -1,0 +1,14 @@
+name: Task
+title: "task-"
+description: Write up a task that needs to be done.
+type: Task
+
+body:
+  - type: textarea
+    id: Description
+    attributes:
+      label: Task details
+      description: What needs to be done?
+      placeholder: "Describe the task"
+    validations:
+      required: true

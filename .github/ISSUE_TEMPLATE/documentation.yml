@@ -1,0 +1,15 @@
+name: Documentation Issue
+title: "[DOCS] "
+description: Report a documentation problem
+labels: ["documentation"]
+type: "task"
+
+body:
+  - type: textarea
+    id: doc-issue
+    attributes:
+      label: What's wrong or missing?
+      description: Describe the issue or improvement needed.
+      placeholder: "Describe the documentation issue"
+    validations:
+      required: true
