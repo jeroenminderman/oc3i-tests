@@ -53,6 +53,13 @@ def load_clean_and_code():
     return (out)
 
 
+def report_match_stats(perf, type="match1"):
+    if type == "match1":
+        return (float(round(perf["match1"] / perf["total_cases"], 2) * 100))
+    if type == "match123":
+        return (float(round(perf["match123"] / perf["total_cases"], 2) * 100))
+
+
 def main():
     out = load_clean_and_code()
 
@@ -61,16 +68,40 @@ def main():
                              prediction1="prediction 1",
                              prediction2="prediction 2",
                              prediction3="prediction 3")
-    print(perf1)
 
-    perf2 = summarise_output(out,
+    perf2 = summarise_output(out[~out["TYPE"].isin(["Deeper ambiguity",
+                                                    "Semantic ambiguity",
+                                                    "Scheme ambiguity"])],
                              given_code="MANUAL_ISCO",
                              prediction1="prediction 1",
                              prediction2="prediction 2",
-                             prediction3="prediction 3",
-                             filter_col="TYPE",
-                             filter_value="Exact match")
-    print(perf2)
+                             prediction3="prediction 3")
+
+    print("")
+    print(f"Performance on all {perf1["total_cases"]} cases:")
+    print("Accuracy results: ")
+    print(
+        f"Manual code matches best prediction: "
+        f"{report_match_stats(perf1, type="match1"):.1f}%"
+    )
+    print(
+        f"Manual code included in top 3 predictions: "
+        f"{report_match_stats(perf1, type="match123"):.1f}%"
+        )
+    print("")
+    print(
+        f"Performance when excluding a priori ambiguous cases "
+        f"(retaining {perf2["total_cases"]} cases):"
+        )
+    print("Accuracy results: ")
+    print(
+        f"Manual code matches best prediction: "
+        f"{report_match_stats(perf2, type="match1"):.1f}%"
+        )
+    print(
+        f"Manual code included in top 3 predictions: "
+        f"{report_match_stats(perf2, type="match123"):.1f}%"
+        )
 
 
 if __name__ == "__main__":
