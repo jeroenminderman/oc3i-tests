@@ -1,4 +1,4 @@
-![Coverage]
+[![Coverage](https://raw.githubusercontent.com/jeroenminderman/oc3i-tests/coverage-badge/coverage.svg)](https://raw.githubusercontent.com/jeroenminderman/oc3i-tests/coverage-badge/coverage.svg)
 
 # `oc3i-tests`
 
