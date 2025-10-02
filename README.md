@@ -1,3 +1,5 @@
+[![Coverage Badge](https://github.com/jeroenminderman/oc3i-tests/actions/workflows/coverage.yml/badge.svg)](https://github.com/jeroenminderman/oc3i-tests/actions/workflows/coverage.yml)
+
 # `oc3i-tests`
 
 This repository is intended to:
