@@ -1,4 +1,4 @@
-[![Coverage Badge](https://github.com/jeroenminderman/oc3i-tests/actions/workflows/coverage.yml/badge.svg)](https://github.com/jeroenminderman/oc3i-tests/actions/workflows/coverage.yml)
+!Coverage
 
 # `oc3i-tests`
 
