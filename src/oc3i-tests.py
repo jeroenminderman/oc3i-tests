@@ -18,6 +18,6 @@ dat["INDUSTRY2"] = ""
 out = coder.code_data_frame(dat,
                             title_column="TITLE",
                             description_column="TASKS",
-                            sector_column="INDUSTRY2")
+                            sector_column="INDUSTRY")
 out["MANUAL_ISCO"] = dat["MANUAL_ISCO"]
 out.to_csv("output.csv", index=False)
