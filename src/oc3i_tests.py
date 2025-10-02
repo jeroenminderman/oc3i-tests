@@ -38,7 +38,7 @@ def summarise_output(df,
     }
 
 
-def main():
+def load_clean_and_code():
     coder = Coder(scheme="isco")
 
     dat = pd.read_excel(data_file, dtype={"MANUAL_ISCO": str})
@@ -49,6 +49,12 @@ def main():
                                 title_column="TITLE",
                                 description_column="TASKS",
                                 sector_column="INDUSTRY")
+
+    return (out)
+
+
+def main():
+    out = load_clean_and_code()
 
     perf1 = summarise_output(out,
                              given_code="MANUAL_ISCO",
