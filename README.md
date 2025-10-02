@@ -1,4 +1,4 @@
-!Coverage
+![Coverage]
 
 # `oc3i-tests`
 
